@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>权威心理测评 | Mind-Management</title>
+    <style>
+        body { font-family: 'PingFang SC', sans-serif; background: #f8fafc; color: #1e293b; line-height: 1.6; }
+        .container { max-width: 800px; margin: 40px auto; background: white; padding: 40px; border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
+        h1 { color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 15px; }
+        .question { margin-bottom: 30px; padding: 15px; border-radius: 8px; transition: background 0.3s; }
+        .question:hover { background: #f1f5f9; }
+        .options { display: flex; gap: 20px; margin-top: 10px; }
+        label { cursor: pointer; display: flex; align-items: center; gap: 8px; }
+        button { background: #2563eb; color: white; border: none; padding: 12px 30px; border-radius: 8px; cursor: pointer; font-size: 16px; font-weight: 600; width: 100%; margin-top: 20px; }
+        button:hover { background: #1d4ed8; }
+        .desc { color: #64748b; font-size: 0.9em; margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🌙 睡眠质量与压力测评 (PSQI 简化版)</h1>
+        <p class="desc">睡眠是心理健康的第一道防线。请根据过去一个月的实际情况回答。</p>
+        
+        <form action="/submit-test" method="POST">
+            <div class="question">
+                <p>1. 过去一个月，您通常每晚实际睡眠时间是多久？</p>
+                <div class="options">
+                    <label><input type="radio" name="q1" value="0" required> >7小时</label>
+                    <label><input type="radio" name="q1" value="1"> 6-7小时</label>
+                    <label><input type="radio" name="q1" value="2"> 5-6小时</label>
+                    <label><input type="radio" name="q1" value="3"> <5小时</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <p>2. 过去一个月，您是否因压力大而难以入睡（超过30分钟）？</p>
+                <div class="options">
+                    <label><input type="radio" name="q2" value="0" required> 无</label>
+                    <label><input type="radio" name="q2" value="1"> <1次/周</label>
+                    <label><input type="radio" name="q2" value="2"> 1-2次/周</label>
+                    <label><input type="radio" name="q3" value="3"> ≥3次/周</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <p>3. 过去一个月，您对完成工作的精力水平评价：</p>
+                <div class="options">
+                    <label><input type="radio" name="q3" value="0" required> 精力充沛</label>
+                    <label><input type="radio" name="q3" value="1"> 偶尔疲惫</label>
+                    <label><input type="radio" name="q3" value="2"> 经常感到吃力</label>
+                    <label><input type="radio" name="q3" value="3"> 严重影响效率</label>
+                </div>
+            </div>
+
+            <button type="submit">提交并生成心理档案</button>
+        </form>
+    </div>
+</body>
+</html>

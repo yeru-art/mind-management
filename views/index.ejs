@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Mind-Management | 员工心理管理</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f0f2f5; margin: 0; display: flex; height: 100vh; }
+        .sidebar { width: 240px; background: #1a2a3a; color: white; padding: 20px; box-shadow: 2px 0 5px rgba(0,0,0,0.1); }
+        .content { flex: 1; padding: 40px; overflow-y: auto; }
+        .card { background: white; border-radius: 12px; padding: 30px; box-shadow: 0 8px 24px rgba(0,0,0,0.05); max-width: 600px; margin: 0 auto; }
+        h1 { color: #2c3e50; margin-top: 0; }
+        .input-group { margin-bottom: 20px; }
+        label { display: block; margin-bottom: 8px; font-weight: 600; color: #4a5568; }
+        input[type="text"], textarea { width: 100%; padding: 12px; border: 2px solid #e2e8f0; border-radius: 8px; box-sizing: border-box; font-size: 16px; }
+        textarea { height: 120px; resize: vertical; }
+        button { background: #4a90e2; color: white; border: none; padding: 12px 24px; border-radius: 8px; cursor: pointer; font-size: 16px; font-weight: bold; width: 100%; transition: background 0.3s; }
+        button:hover { background: #357abd; }
+        .badge { background: #e2f0ff; color: #3182ce; padding: 4px 12px; border-radius: 99px; font-size: 12px; font-weight: bold; text-transform: uppercase; }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>🧠 Mind-Mgmt</h2>
+        <p style="opacity: 0.7;">AI 驱动的心理管理</p>
+        <hr style="border: 0.5px solid #2d3748; margin: 20px 0;">
+        <nav>
+            <p>🏠 仪表盘</p>
+            <p>📊 团队报告</p>
+            <p>⚙️ 设置</p>
+        </nav>
+    </div>
+    <div class="content">
+        <div class="card">
+            <span class="badge">心理评估模块</span>
+            <h1>录入反馈</h1>
+            <p style="color: #718096;">输入员工的表现或对话内容，AI 将为您提供心理学视角的分析建议。</p>
+            
+            <form action="/submit-feedback" method="POST">
+                <div class="input-group">
+                    <label>员工姓名</label>
+                    <input type="text" name="employeeName" placeholder="例如：李雷" required>
+                </div>
+                <div class="input-group">
+                    <label>情况描述</label>
+                    <textarea name="feedback" placeholder="最近这位员工表现如何？有哪些反常或积极的行为？" required></textarea>
+                </div>
+                <button type="submit">启动 AI 分析</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+<div style="margin-top: 20px;">
+    <a href="/test" style="color: #4a90e2; font-weight: bold;">👉 进入员工压力与睡眠测评 (PSQI)</a>
+</div>
